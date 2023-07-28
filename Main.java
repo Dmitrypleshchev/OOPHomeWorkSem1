@@ -7,62 +7,28 @@
 и воспроизвести логику, заложенную в программе
 Всё вышеуказанное создать согласно принципам ООП, пройденным на семинаре*/
 
-class Product {
-  private String name;
-  private double price;
-  private int count;
-
-  public Product (String name, double price, int count) {
-    this.name = name;
-    this.price = price;
-    this.count = count;
-  }
-
-  public String GetName() {
-    return name;
-  }
-
-  public void SetName(String name) {
-    this.name = name;
-  }
-
-  public double GetPrice() {
-    return price;
-  }
-
-  public void SetPrice(double price) {
-    this.price = price;
-  }
-
-  public int GetCount() {
-    return count;
-  }
-
-  public void SetCount(int count) {
-    this.count = count;
-  }
-
-  public String toString() {
-    return "Product{" + "name =" + name + "" + ", price = " + price + ", count =" + count + "}";
-  }
 
   class HotDrink extends Product {
     private int temperature;
 
-    public HotDrink (String name, double price, int count, int temperature) {
-      super(name, price, count);
+    public HotDrink (String name, double price, int count, int temperature, int volume) {
+      super(name, price, count, volume);
       this.temperature = temperature;
     }
 
     public String toString() {
-      return "HotDrink{" +  "name =" + super.GetName() + "" + ", price = " + super.GetPrice() + ", count =" + super. GetCount() + 
-      ", temperature =" + temperature+ "}";
+      return "HotDrink {" + super.GetName() + "" + ", price = " + super.GetPrice() + ", count = " + super. GetCount() + 
+      ", temperature = " + temperature + "}";
+    }
+
+    public int GetTemperature() {
+      return 0;
     }
   }
 
   public class Main{
   public static void main (String[] args) {
-    HotDrink coffee = new HotDrink ("Coffee", 50.00, 10, 80);
+    HotDrink coffee = new HotDrink ("Coffee", 50.00, 15, 80);
     HotDrink tea = new HotDrink ("Tea", 45.00, 15, 70);
     HotDrink hotChocolate = new HotDrink ("Hot Chocolate", 60.00, 8, 85);
 
@@ -71,4 +37,3 @@ class Product {
     System.out.println(hotChocolate.toString());
     }
   }
-}

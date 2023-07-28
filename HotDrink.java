@@ -8,13 +8,13 @@ public class HotDrink extends Product {
     this.temperature = temperature;
   }
 
-  public double GetTemperature() {
+  public double getTemperature() {
     return temperature;
-}
+  }
 
-public void SetTemperature(int temperature) {
+  public void SetTemperature(int temperature) {
     this.temperature = temperature;
-}
+  }
 
   public String toString() {
     return "HotDrink {" + super.GetName() + "" + ", price = " + super.GetPrice() + ", count = " + super. GetCount() + 

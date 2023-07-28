@@ -20,7 +20,7 @@ import java.util.List;
     public HotDrink getProduct(String name, int volume, int temperature) {
         for (HotDrink product: products){
             if(product != null) {
-                if(product.GetName().equalsIgnoreCase(name) && ((HotDrink) product).GetVolume() == volume && ((HotDrink) product).GetTemperature() == temperature) {
+                if(product.GetName().equalsIgnoreCase(name) && ((HotDrink) product).GetVolume() == volume && ((HotDrink) product).getTemperature() == temperature) {
                     return (HotDrink) product;
                 }
             }

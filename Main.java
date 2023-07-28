@@ -15,11 +15,14 @@ public class Main {
         HotDrinkVendingMachine machine1 = new HotDrinkVendingMachine(newList);
         HotDrink coffee = new HotDrink("Coffee", 80.0, 300, 70, 0);
         HotDrink blackTea = new HotDrink("BlacK Tea", 35.0, 500, 85, 0);
+        HotDrink hotChocolate = new HotDrink("Hot Chocolate", 60.0, 400, 80,0);
 
         newList.add(coffee);
         newList.add(blackTea);
+        newList.add(hotChocolate);
 
-        System.out.println(machine1.getProduct("Coffee", 300, 70));
+        System.out.println(machine1.getProduct("Americano", 300, 70));
         System.out.println(machine1.getProduct("BlackTea", 500, 85));
+        System.out.println(machine1.getProduct("Coffee", 500, 85));
     }
 }

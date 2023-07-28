@@ -7,33 +7,19 @@
 и воспроизвести логику, заложенную в программе
 Всё вышеуказанное создать согласно принципам ООП, пройденным на семинаре*/
 
+  import java.util.*;
 
-  class HotDrink extends Product {
-    private int temperature;
+public class Main {
+    public static void main(String[] args) {
+        List<HotDrink> newList = new LinkedList<>();
+        HotDrinkVendingMachine machine1 = new HotDrinkVendingMachine(newList);
+        HotDrink coffee = new HotDrink("Coffee", 80.0, 300, 70, 0);
+        HotDrink blackTea = new HotDrink("BlacK Tea", 35.0, 500, 85, 0);
 
-    public HotDrink (String name, double price, int count, int temperature, int volume) {
-      super(name, price, count, volume);
-      this.temperature = temperature;
+        newList.add(coffee);
+        newList.add(blackTea);
+
+        System.out.println(machine1.getProduct("Coffee", 300, 70));
+        System.out.println(machine1.getProduct("BlackTea", 500, 85));
     }
-
-    public String toString() {
-      return "HotDrink {" + super.GetName() + "" + ", price = " + super.GetPrice() + ", count = " + super. GetCount() + 
-      ", temperature = " + temperature + "}";
-    }
-
-    public int GetTemperature() {
-      return 0;
-    }
-  }
-
-  public class Main{
-  public static void main (String[] args) {
-    HotDrink coffee = new HotDrink ("Coffee", 50.00, 15, 80);
-    HotDrink tea = new HotDrink ("Tea", 45.00, 15, 70);
-    HotDrink hotChocolate = new HotDrink ("Hot Chocolate", 60.00, 8, 85);
-
-    System.out.println(coffee.toString());
-    System.out.println(tea.toString());
-    System.out.println(hotChocolate.toString());
-    }
-  }
+}
